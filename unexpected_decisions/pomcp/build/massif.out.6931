@@ -1,0 +1,1429 @@
+desc: (none)
+cmd: ./pomcp --problem tiger --runs=100 --mindoubles=15 --maxdoubles=15 --verbose=0 --usetransforms=0 --seed=1
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=1320956463
+mem_heap_B=5416337
+mem_heap_extra_B=1431751
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=2280253591
+mem_heap_B=5067585
+mem_heap_extra_B=1414815
+mem_stacks_B=0
+heap_tree=detailed
+n6: 5067585 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2637824 0x14C3F2: MEMORY_POOL<TIGER_STATE>::NewChunk() (memorypool.h:88)
+  n2: 2637824 0x14C032: MEMORY_POOL<TIGER_STATE>::Allocate() (memorypool.h:50)
+   n2: 1572864 0x14B03E: TIGER::Copy(STATE const&) const (tiger.cpp:18)
+    n1: 1040384 0x12EF52: MCTS::AddSample(VNODE*, STATE const&) (mcts.cpp:416)
+     n1: 1040384 0x12E9D9: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:338)
+      n1: 1040384 0x12ECD9: MCTS::SimulateQ(STATE&, QNODE&, int) (mcts.cpp:376)
+       n1: 1040384 0x12EA05: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:341)
+        n1: 1040384 0x12E846: MCTS::UCTSearch() (mcts.cpp:314)
+         n1: 1040384 0x12DF2C: MCTS::SelectAction() (mcts.cpp:227)
+          n1: 1040384 0x11640F: EXPERIMENT::Run(int) (experiment.cpp:109)
+           n1: 1040384 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+            n1: 1040384 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+             n0: 1040384 0x11C4B9: main (main.cpp:150)
+    n1: 532480 0x114BD0: BELIEF_STATE::Copy(BELIEF_STATE const&, SIMULATOR const&) (beliefstate.cpp:38)
+     n1: 532480 0x12D9C7: MCTS::Update(int, int, double) (mcts.cpp:146)
+      n1: 532480 0x1168AA: EXPERIMENT::Run(int) (experiment.cpp:156)
+       n1: 532480 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+        n1: 532480 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+         n0: 532480 0x11C4B9: main (main.cpp:150)
+   n2: 1064960 0x14B088: TIGER::CreateStartState() const (tiger.cpp:27)
+    n1: 1048576 0x12CC23: MCTS::MCTS(SIMULATOR const&, MCTS::PARAMS const&) (mcts.cpp:43)
+     n1: 1048576 0x116126: EXPERIMENT::Run(int) (experiment.cpp:80)
+      n1: 1048576 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+       n1: 1048576 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+        n0: 1048576 0x11C4B9: main (main.cpp:150)
+    n0: 16384 in 2 places, all below massif's threshold (1.00%)
+ n1: 1050624 0x14DE8E: __gnu_cxx::new_allocator<TIGER_STATE*>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n1: 1050624 0x14DC08: std::allocator_traits<std::allocator<TIGER_STATE*> >::allocate(std::allocator<TIGER_STATE*>&, unsigned long) (alloc_traits.h:436)
+   n2: 1050624 0x14D58C: std::_Vector_base<TIGER_STATE*, std::allocator<TIGER_STATE*> >::_M_allocate(unsigned long) (stl_vector.h:172)
+    n1: 1048576 0x14CBBA: void std::vector<TIGER_STATE*, std::allocator<TIGER_STATE*> >::_M_realloc_insert<TIGER_STATE* const&>(__gnu_cxx::__normal_iterator<TIGER_STATE**, std::vector<TIGER_STATE*, std::allocator<TIGER_STATE*> > >, TIGER_STATE* const&) (vector.tcc:406)
+     n1: 1048576 0x14C59C: std::vector<TIGER_STATE*, std::allocator<TIGER_STATE*> >::push_back(TIGER_STATE* const&) (stl_vector.h:948)
+      n1: 1048576 0x14C110: MEMORY_POOL<TIGER_STATE>::Free(TIGER_STATE*) (memorypool.h:63)
+       n1: 1048576 0x14B0E7: TIGER::FreeState(STATE*) const (tiger.cpp:36)
+        n1: 1048576 0x114A90: BELIEF_STATE::Free(SIMULATOR const&) (beliefstate.cpp:17)
+         n2: 1048576 0x13942D: VNODE::Free(VNODE*, SIMULATOR const&) (node.cpp:73)
+          n1: 1048576 0x12D834: MCTS::~MCTS() (mcts.cpp:127)
+           n1: 1048576 0x116EDC: EXPERIMENT::Run(int) (experiment.cpp:80)
+            n1: 1048576 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+             n1: 1048576 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+              n0: 1048576 0x11C4B9: main (main.cpp:150)
+          n0: 0 in 1 place, below massif's threshold (1.00%)
+    n0: 2048 in 1 place, below massif's threshold (1.00%)
+ n1: 683528 0x115932: __gnu_cxx::new_allocator<STATE*>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n1: 683528 0x11580E: std::allocator_traits<std::allocator<STATE*> >::allocate(std::allocator<STATE*>&, unsigned long) (alloc_traits.h:436)
+   n2: 683528 0x1156BE: std::_Vector_base<STATE*, std::allocator<STATE*> >::_M_allocate(unsigned long) (stl_vector.h:172)
+    n1: 557056 0x115258: void std::vector<STATE*, std::allocator<STATE*> >::_M_realloc_insert<STATE* const&>(__gnu_cxx::__normal_iterator<STATE**, std::vector<STATE*, std::allocator<STATE*> > >, STATE* const&) (vector.tcc:406)
+     n1: 557056 0x114F4E: std::vector<STATE*, std::allocator<STATE*> >::push_back(STATE* const&) (stl_vector.h:948)
+      n3: 557056 0x114B49: BELIEF_STATE::AddSample(STATE*) (beliefstate.cpp:30)
+       n1: 294912 0x12EF74: MCTS::AddSample(VNODE*, STATE const&) (mcts.cpp:417)
+        n1: 294912 0x12E9D9: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:338)
+         n1: 294912 0x12ECD9: MCTS::SimulateQ(STATE&, QNODE&, int) (mcts.cpp:376)
+          n1: 294912 0x12EA05: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:341)
+           n1: 294912 0x12E846: MCTS::UCTSearch() (mcts.cpp:314)
+            n1: 294912 0x12DF2C: MCTS::SelectAction() (mcts.cpp:227)
+             n1: 294912 0x11640F: EXPERIMENT::Run(int) (experiment.cpp:109)
+              n1: 294912 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+               n1: 294912 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+                n0: 294912 0x11C4B9: main (main.cpp:150)
+       n1: 262144 0x12CC2E: MCTS::MCTS(SIMULATOR const&, MCTS::PARAMS const&) (mcts.cpp:43)
+        n1: 262144 0x116126: EXPERIMENT::Run(int) (experiment.cpp:80)
+         n1: 262144 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+          n1: 262144 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+           n0: 262144 0x11C4B9: main (main.cpp:150)
+       n0: 0 in 1 place, below massif's threshold (1.00%)
+    n1: 126472 0x1325A4: STATE** std::vector<STATE*, std::allocator<STATE*> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<STATE* const*, std::vector<STATE*, std::allocator<STATE*> > > >(unsigned long, __gnu_cxx::__normal_iterator<STATE* const*, std::vector<STATE*, std::allocator<STATE*> > >, __gnu_cxx::__normal_iterator<STATE* const*, std::vector<STATE*, std::allocator<STATE*> > >) (stl_vector.h:1260)
+     n1: 126472 0x131815: std::vector<STATE*, std::allocator<STATE*> >::operator=(std::vector<STATE*, std::allocator<STATE*> > const&) (vector.tcc:206)
+      n1: 126472 0x131173: BELIEF_STATE::operator=(BELIEF_STATE const&) (beliefstate.h:9)
+       n1: 126472 0x12DB5D: MCTS::Update(int, int, double) (mcts.cpp:173)
+        n1: 126472 0x1168AA: EXPERIMENT::Run(int) (experiment.cpp:156)
+         n1: 126472 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+          n1: 126472 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+           n0: 126472 0x11C4B9: main (main.cpp:150)
+ n1: 562116 0x11ABBE: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n1: 562116 0x11A766: std::allocator_traits<std::allocator<int> >::allocate(std::allocator<int>&, unsigned long) (alloc_traits.h:436)
+   n2: 562116 0x119E72: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (stl_vector.h:172)
+    n1: 561728 0x143D66: int* std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >(unsigned long, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >) (stl_vector.h:1260)
+     n1: 561728 0x142BDF: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (vector.tcc:206)
+      n1: 561728 0x14BF91: TIGER_STATE::operator=(TIGER_STATE const&) (tiger.h:9)
+       n2: 561728 0x14B055: TIGER::Copy(STATE const&) const (tiger.cpp:19)
+        n1: 282556 0x12EF52: MCTS::AddSample(VNODE*, STATE const&) (mcts.cpp:416)
+         n1: 282556 0x12E9D9: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:338)
+          n1: 282556 0x12ECD9: MCTS::SimulateQ(STATE&, QNODE&, int) (mcts.cpp:376)
+           n1: 282556 0x12EA05: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:341)
+            n1: 282556 0x12E846: MCTS::UCTSearch() (mcts.cpp:314)
+             n1: 282556 0x12DF2C: MCTS::SelectAction() (mcts.cpp:227)
+              n1: 282556 0x11640F: EXPERIMENT::Run(int) (experiment.cpp:109)
+               n1: 282556 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+                n1: 282556 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+                 n0: 282556 0x11C4B9: main (main.cpp:150)
+        n1: 279172 0x114BD0: BELIEF_STATE::Copy(BELIEF_STATE const&, SIMULATOR const&) (beliefstate.cpp:38)
+         n1: 279172 0x12D9C7: MCTS::Update(int, int, double) (mcts.cpp:146)
+          n1: 279172 0x1168AA: EXPERIMENT::Run(int) (experiment.cpp:156)
+           n1: 279172 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+            n1: 279172 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+             n0: 279172 0x11C4B9: main (main.cpp:150)
+    n0: 388 in 2 places, all below massif's threshold (1.00%)
+ n1: 72704 0x5145424: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x40108F1: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x7: ???
+     n1: 72704 0x1FFEFFFEFD: ???
+      n1: 72704 0x1FFEFFFF05: ???
+       n1: 72704 0x1FFEFFFF0F: ???
+        n1: 72704 0x1FFEFFFF15: ???
+         n1: 72704 0x1FFEFFFF20: ???
+          n1: 72704 0x1FFEFFFF30: ???
+           n1: 72704 0x1FFEFFFF40: ???
+            n1: 72704 0x1FFEFFFF4C: ???
+             n0: 72704 0x1FFEFFFF5E: ???
+ n0: 60789 in 52 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=3
+#-----------
+time=3777902097
+mem_heap_B=5719741
+mem_heap_extra_B=1323787
+mem_stacks_B=0
+heap_tree=detailed
+n6: 5719741 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2637824 0x14C3F2: MEMORY_POOL<TIGER_STATE>::NewChunk() (memorypool.h:88)
+  n2: 2637824 0x14C032: MEMORY_POOL<TIGER_STATE>::Allocate() (memorypool.h:50)
+   n2: 1572864 0x14B03E: TIGER::Copy(STATE const&) const (tiger.cpp:18)
+    n1: 1040384 0x12EF52: MCTS::AddSample(VNODE*, STATE const&) (mcts.cpp:416)
+     n1: 1040384 0x12E9D9: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:338)
+      n1: 1040384 0x12ECD9: MCTS::SimulateQ(STATE&, QNODE&, int) (mcts.cpp:376)
+       n1: 1040384 0x12EA05: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:341)
+        n1: 1040384 0x12E846: MCTS::UCTSearch() (mcts.cpp:314)
+         n1: 1040384 0x12DF2C: MCTS::SelectAction() (mcts.cpp:227)
+          n1: 1040384 0x11640F: EXPERIMENT::Run(int) (experiment.cpp:109)
+           n1: 1040384 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+            n1: 1040384 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+             n0: 1040384 0x11C4B9: main (main.cpp:150)
+    n1: 532480 0x114BD0: BELIEF_STATE::Copy(BELIEF_STATE const&, SIMULATOR const&) (beliefstate.cpp:38)
+     n1: 532480 0x12D9C7: MCTS::Update(int, int, double) (mcts.cpp:146)
+      n1: 532480 0x1168AA: EXPERIMENT::Run(int) (experiment.cpp:156)
+       n1: 532480 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+        n1: 532480 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+         n0: 532480 0x11C4B9: main (main.cpp:150)
+   n2: 1064960 0x14B088: TIGER::CreateStartState() const (tiger.cpp:27)
+    n1: 1048576 0x12CC23: MCTS::MCTS(SIMULATOR const&, MCTS::PARAMS const&) (mcts.cpp:43)
+     n1: 1048576 0x116126: EXPERIMENT::Run(int) (experiment.cpp:80)
+      n1: 1048576 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+       n1: 1048576 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+        n0: 1048576 0x11C4B9: main (main.cpp:150)
+    n0: 16384 in 2 places, all below massif's threshold (1.00%)
+ n1: 1239448 0x115932: __gnu_cxx::new_allocator<STATE*>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n1: 1239448 0x11580E: std::allocator_traits<std::allocator<STATE*> >::allocate(std::allocator<STATE*>&, unsigned long) (alloc_traits.h:436)
+   n2: 1239448 0x1156BE: std::_Vector_base<STATE*, std::allocator<STATE*> >::_M_allocate(unsigned long) (stl_vector.h:172)
+    n1: 917504 0x115258: void std::vector<STATE*, std::allocator<STATE*> >::_M_realloc_insert<STATE* const&>(__gnu_cxx::__normal_iterator<STATE**, std::vector<STATE*, std::allocator<STATE*> > >, STATE* const&) (vector.tcc:406)
+     n1: 917504 0x114F4E: std::vector<STATE*, std::allocator<STATE*> >::push_back(STATE* const&) (stl_vector.h:948)
+      n3: 917504 0x114B49: BELIEF_STATE::AddSample(STATE*) (beliefstate.cpp:30)
+       n1: 655360 0x12EF74: MCTS::AddSample(VNODE*, STATE const&) (mcts.cpp:417)
+        n1: 655360 0x12E9D9: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:338)
+         n1: 655360 0x12ECD9: MCTS::SimulateQ(STATE&, QNODE&, int) (mcts.cpp:376)
+          n1: 655360 0x12EA05: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:341)
+           n1: 655360 0x12E846: MCTS::UCTSearch() (mcts.cpp:314)
+            n1: 655360 0x12DF2C: MCTS::SelectAction() (mcts.cpp:227)
+             n1: 655360 0x11640F: EXPERIMENT::Run(int) (experiment.cpp:109)
+              n1: 655360 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+               n1: 655360 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+                n0: 655360 0x11C4B9: main (main.cpp:150)
+       n1: 262144 0x12CC2E: MCTS::MCTS(SIMULATOR const&, MCTS::PARAMS const&) (mcts.cpp:43)
+        n1: 262144 0x116126: EXPERIMENT::Run(int) (experiment.cpp:80)
+         n1: 262144 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+          n1: 262144 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+           n0: 262144 0x11C4B9: main (main.cpp:150)
+       n0: 0 in 1 place, below massif's threshold (1.00%)
+    n1: 321944 0x1325A4: STATE** std::vector<STATE*, std::allocator<STATE*> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<STATE* const*, std::vector<STATE*, std::allocator<STATE*> > > >(unsigned long, __gnu_cxx::__normal_iterator<STATE* const*, std::vector<STATE*, std::allocator<STATE*> > >, __gnu_cxx::__normal_iterator<STATE* const*, std::vector<STATE*, std::allocator<STATE*> > >) (stl_vector.h:1260)
+     n1: 321944 0x131815: std::vector<STATE*, std::allocator<STATE*> >::operator=(std::vector<STATE*, std::allocator<STATE*> > const&) (vector.tcc:206)
+      n1: 321944 0x131173: BELIEF_STATE::operator=(BELIEF_STATE const&) (beliefstate.h:9)
+       n1: 321944 0x12DB5D: MCTS::Update(int, int, double) (mcts.cpp:173)
+        n1: 321944 0x1168AA: EXPERIMENT::Run(int) (experiment.cpp:156)
+         n1: 321944 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+          n1: 321944 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+           n0: 321944 0x11C4B9: main (main.cpp:150)
+ n1: 1050624 0x14DE8E: __gnu_cxx::new_allocator<TIGER_STATE*>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n1: 1050624 0x14DC08: std::allocator_traits<std::allocator<TIGER_STATE*> >::allocate(std::allocator<TIGER_STATE*>&, unsigned long) (alloc_traits.h:436)
+   n2: 1050624 0x14D58C: std::_Vector_base<TIGER_STATE*, std::allocator<TIGER_STATE*> >::_M_allocate(unsigned long) (stl_vector.h:172)
+    n1: 1048576 0x14CBBA: void std::vector<TIGER_STATE*, std::allocator<TIGER_STATE*> >::_M_realloc_insert<TIGER_STATE* const&>(__gnu_cxx::__normal_iterator<TIGER_STATE**, std::vector<TIGER_STATE*, std::allocator<TIGER_STATE*> > >, TIGER_STATE* const&) (vector.tcc:406)
+     n1: 1048576 0x14C59C: std::vector<TIGER_STATE*, std::allocator<TIGER_STATE*> >::push_back(TIGER_STATE* const&) (stl_vector.h:948)
+      n1: 1048576 0x14C110: MEMORY_POOL<TIGER_STATE>::Free(TIGER_STATE*) (memorypool.h:63)
+       n1: 1048576 0x14B0E7: TIGER::FreeState(STATE*) const (tiger.cpp:36)
+        n1: 1048576 0x114A90: BELIEF_STATE::Free(SIMULATOR const&) (beliefstate.cpp:17)
+         n2: 1048576 0x13942D: VNODE::Free(VNODE*, SIMULATOR const&) (node.cpp:73)
+          n1: 1048576 0x12D834: MCTS::~MCTS() (mcts.cpp:127)
+           n1: 1048576 0x116EDC: EXPERIMENT::Run(int) (experiment.cpp:80)
+            n1: 1048576 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+             n1: 1048576 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+              n0: 1048576 0x11C4B9: main (main.cpp:150)
+          n0: 0 in 1 place, below massif's threshold (1.00%)
+    n0: 2048 in 1 place, below massif's threshold (1.00%)
+ n1: 653872 0x11ABBE: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n1: 653872 0x11A766: std::allocator_traits<std::allocator<int> >::allocate(std::allocator<int>&, unsigned long) (alloc_traits.h:436)
+   n2: 653872 0x119E72: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (stl_vector.h:172)
+    n1: 653232 0x143D66: int* std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >(unsigned long, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >) (stl_vector.h:1260)
+     n1: 653232 0x142BDF: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (vector.tcc:206)
+      n1: 653232 0x14BF91: TIGER_STATE::operator=(TIGER_STATE const&) (tiger.h:9)
+       n2: 653232 0x14B055: TIGER::Copy(STATE const&) const (tiger.cpp:19)
+        n1: 349172 0x12EF52: MCTS::AddSample(VNODE*, STATE const&) (mcts.cpp:416)
+         n1: 349172 0x12E9D9: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:338)
+          n1: 349172 0x12ECD9: MCTS::SimulateQ(STATE&, QNODE&, int) (mcts.cpp:376)
+           n1: 349172 0x12EA05: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:341)
+            n1: 349172 0x12E846: MCTS::UCTSearch() (mcts.cpp:314)
+             n1: 349172 0x12DF2C: MCTS::SelectAction() (mcts.cpp:227)
+              n1: 349172 0x11640F: EXPERIMENT::Run(int) (experiment.cpp:109)
+               n1: 349172 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+                n1: 349172 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+                 n0: 349172 0x11C4B9: main (main.cpp:150)
+        n1: 304060 0x114BD0: BELIEF_STATE::Copy(BELIEF_STATE const&, SIMULATOR const&) (beliefstate.cpp:38)
+         n1: 304060 0x12D9C7: MCTS::Update(int, int, double) (mcts.cpp:146)
+          n1: 304060 0x1168AA: EXPERIMENT::Run(int) (experiment.cpp:156)
+           n1: 304060 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+            n1: 304060 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+             n0: 304060 0x11C4B9: main (main.cpp:150)
+    n0: 640 in 2 places, all below massif's threshold (1.00%)
+ n1: 72704 0x5145424: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x40108F1: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x7: ???
+     n1: 72704 0x1FFEFFFEFD: ???
+      n1: 72704 0x1FFEFFFF05: ???
+       n1: 72704 0x1FFEFFFF0F: ???
+        n1: 72704 0x1FFEFFFF15: ???
+         n1: 72704 0x1FFEFFFF20: ???
+          n1: 72704 0x1FFEFFFF30: ???
+           n1: 72704 0x1FFEFFFF40: ???
+            n1: 72704 0x1FFEFFFF4C: ???
+             n0: 72704 0x1FFEFFFF5E: ???
+ n0: 65269 in 52 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=4
+#-----------
+time=5140088268
+mem_heap_B=5004341
+mem_heap_extra_B=1323675
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=6351598754
+mem_heap_B=5359705
+mem_heap_extra_B=1323231
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=7927367999
+mem_heap_B=5866961
+mem_heap_extra_B=1191183
+mem_stacks_B=0
+heap_tree=detailed
+n6: 5866961 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2637824 0x14C3F2: MEMORY_POOL<TIGER_STATE>::NewChunk() (memorypool.h:88)
+  n2: 2637824 0x14C032: MEMORY_POOL<TIGER_STATE>::Allocate() (memorypool.h:50)
+   n2: 1572864 0x14B03E: TIGER::Copy(STATE const&) const (tiger.cpp:18)
+    n1: 1040384 0x12EF52: MCTS::AddSample(VNODE*, STATE const&) (mcts.cpp:416)
+     n1: 1040384 0x12E9D9: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:338)
+      n1: 1040384 0x12ECD9: MCTS::SimulateQ(STATE&, QNODE&, int) (mcts.cpp:376)
+       n1: 1040384 0x12EA05: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:341)
+        n1: 1040384 0x12E846: MCTS::UCTSearch() (mcts.cpp:314)
+         n1: 1040384 0x12DF2C: MCTS::SelectAction() (mcts.cpp:227)
+          n1: 1040384 0x11640F: EXPERIMENT::Run(int) (experiment.cpp:109)
+           n1: 1040384 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+            n1: 1040384 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+             n0: 1040384 0x11C4B9: main (main.cpp:150)
+    n1: 532480 0x114BD0: BELIEF_STATE::Copy(BELIEF_STATE const&, SIMULATOR const&) (beliefstate.cpp:38)
+     n1: 532480 0x12D9C7: MCTS::Update(int, int, double) (mcts.cpp:146)
+      n1: 532480 0x1168AA: EXPERIMENT::Run(int) (experiment.cpp:156)
+       n1: 532480 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+        n1: 532480 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+         n0: 532480 0x11C4B9: main (main.cpp:150)
+   n2: 1064960 0x14B088: TIGER::CreateStartState() const (tiger.cpp:27)
+    n1: 1048576 0x12CC23: MCTS::MCTS(SIMULATOR const&, MCTS::PARAMS const&) (mcts.cpp:43)
+     n1: 1048576 0x116126: EXPERIMENT::Run(int) (experiment.cpp:80)
+      n1: 1048576 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+       n1: 1048576 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+        n0: 1048576 0x11C4B9: main (main.cpp:150)
+    n0: 16384 in 2 places, all below massif's threshold (1.00%)
+ n1: 1245408 0x115932: __gnu_cxx::new_allocator<STATE*>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n1: 1245408 0x11580E: std::allocator_traits<std::allocator<STATE*> >::allocate(std::allocator<STATE*>&, unsigned long) (alloc_traits.h:436)
+   n2: 1245408 0x1156BE: std::_Vector_base<STATE*, std::allocator<STATE*> >::_M_allocate(unsigned long) (stl_vector.h:172)
+    n1: 1114112 0x115258: void std::vector<STATE*, std::allocator<STATE*> >::_M_realloc_insert<STATE* const&>(__gnu_cxx::__normal_iterator<STATE**, std::vector<STATE*, std::allocator<STATE*> > >, STATE* const&) (vector.tcc:406)
+     n1: 1114112 0x114F4E: std::vector<STATE*, std::allocator<STATE*> >::push_back(STATE* const&) (stl_vector.h:948)
+      n3: 1114112 0x114B49: BELIEF_STATE::AddSample(STATE*) (beliefstate.cpp:30)
+       n1: 851968 0x12EF74: MCTS::AddSample(VNODE*, STATE const&) (mcts.cpp:417)
+        n1: 851968 0x12E9D9: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:338)
+         n1: 851968 0x12ECD9: MCTS::SimulateQ(STATE&, QNODE&, int) (mcts.cpp:376)
+          n1: 851968 0x12EA05: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:341)
+           n1: 851968 0x12E846: MCTS::UCTSearch() (mcts.cpp:314)
+            n1: 851968 0x12DF2C: MCTS::SelectAction() (mcts.cpp:227)
+             n1: 851968 0x11640F: EXPERIMENT::Run(int) (experiment.cpp:109)
+              n1: 851968 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+               n1: 851968 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+                n0: 851968 0x11C4B9: main (main.cpp:150)
+       n1: 262144 0x12CC2E: MCTS::MCTS(SIMULATOR const&, MCTS::PARAMS const&) (mcts.cpp:43)
+        n1: 262144 0x116126: EXPERIMENT::Run(int) (experiment.cpp:80)
+         n1: 262144 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+          n1: 262144 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+           n0: 262144 0x11C4B9: main (main.cpp:150)
+       n0: 0 in 1 place, below massif's threshold (1.00%)
+    n1: 131296 0x1325A4: STATE** std::vector<STATE*, std::allocator<STATE*> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<STATE* const*, std::vector<STATE*, std::allocator<STATE*> > > >(unsigned long, __gnu_cxx::__normal_iterator<STATE* const*, std::vector<STATE*, std::allocator<STATE*> > >, __gnu_cxx::__normal_iterator<STATE* const*, std::vector<STATE*, std::allocator<STATE*> > >) (stl_vector.h:1260)
+     n1: 131296 0x131815: std::vector<STATE*, std::allocator<STATE*> >::operator=(std::vector<STATE*, std::allocator<STATE*> > const&) (vector.tcc:206)
+      n1: 131296 0x131173: BELIEF_STATE::operator=(BELIEF_STATE const&) (beliefstate.h:9)
+       n1: 131296 0x12DB5D: MCTS::Update(int, int, double) (mcts.cpp:173)
+        n1: 131296 0x1168AA: EXPERIMENT::Run(int) (experiment.cpp:156)
+         n1: 131296 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+          n1: 131296 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+           n0: 131296 0x11C4B9: main (main.cpp:150)
+ n1: 1050624 0x14DE8E: __gnu_cxx::new_allocator<TIGER_STATE*>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n1: 1050624 0x14DC08: std::allocator_traits<std::allocator<TIGER_STATE*> >::allocate(std::allocator<TIGER_STATE*>&, unsigned long) (alloc_traits.h:436)
+   n2: 1050624 0x14D58C: std::_Vector_base<TIGER_STATE*, std::allocator<TIGER_STATE*> >::_M_allocate(unsigned long) (stl_vector.h:172)
+    n1: 1048576 0x14CBBA: void std::vector<TIGER_STATE*, std::allocator<TIGER_STATE*> >::_M_realloc_insert<TIGER_STATE* const&>(__gnu_cxx::__normal_iterator<TIGER_STATE**, std::vector<TIGER_STATE*, std::allocator<TIGER_STATE*> > >, TIGER_STATE* const&) (vector.tcc:406)
+     n1: 1048576 0x14C59C: std::vector<TIGER_STATE*, std::allocator<TIGER_STATE*> >::push_back(TIGER_STATE* const&) (stl_vector.h:948)
+      n1: 1048576 0x14C110: MEMORY_POOL<TIGER_STATE>::Free(TIGER_STATE*) (memorypool.h:63)
+       n1: 1048576 0x14B0E7: TIGER::FreeState(STATE*) const (tiger.cpp:36)
+        n1: 1048576 0x114A90: BELIEF_STATE::Free(SIMULATOR const&) (beliefstate.cpp:17)
+         n2: 1048576 0x13942D: VNODE::Free(VNODE*, SIMULATOR const&) (node.cpp:73)
+          n1: 1048576 0x12D834: MCTS::~MCTS() (mcts.cpp:127)
+           n1: 1048576 0x116EDC: EXPERIMENT::Run(int) (experiment.cpp:80)
+            n1: 1048576 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+             n1: 1048576 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+              n0: 1048576 0x11C4B9: main (main.cpp:150)
+          n0: 0 in 1 place, below massif's threshold (1.00%)
+    n0: 2048 in 1 place, below massif's threshold (1.00%)
+ n1: 787932 0x11ABBE: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n1: 787932 0x11A766: std::allocator_traits<std::allocator<int> >::allocate(std::allocator<int>&, unsigned long) (alloc_traits.h:436)
+   n2: 787932 0x119E72: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (stl_vector.h:172)
+    n1: 786576 0x143D66: int* std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >(unsigned long, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >) (stl_vector.h:1260)
+     n1: 786576 0x142BDF: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (vector.tcc:206)
+      n1: 786576 0x14BF91: TIGER_STATE::operator=(TIGER_STATE const&) (tiger.h:9)
+       n2: 786576 0x14B055: TIGER::Copy(STATE const&) const (tiger.cpp:19)
+        n1: 417652 0x12EF52: MCTS::AddSample(VNODE*, STATE const&) (mcts.cpp:416)
+         n1: 417652 0x12E9D9: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:338)
+          n1: 417652 0x12ECD9: MCTS::SimulateQ(STATE&, QNODE&, int) (mcts.cpp:376)
+           n1: 417652 0x12EA05: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:341)
+            n1: 417652 0x12E846: MCTS::UCTSearch() (mcts.cpp:314)
+             n1: 417652 0x12DF2C: MCTS::SelectAction() (mcts.cpp:227)
+              n1: 417652 0x11640F: EXPERIMENT::Run(int) (experiment.cpp:109)
+               n1: 417652 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+                n1: 417652 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+                 n0: 417652 0x11C4B9: main (main.cpp:150)
+        n1: 368924 0x114BD0: BELIEF_STATE::Copy(BELIEF_STATE const&, SIMULATOR const&) (beliefstate.cpp:38)
+         n1: 368924 0x12D9C7: MCTS::Update(int, int, double) (mcts.cpp:146)
+          n1: 368924 0x1168AA: EXPERIMENT::Run(int) (experiment.cpp:156)
+           n1: 368924 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+            n1: 368924 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+             n0: 368924 0x11C4B9: main (main.cpp:150)
+    n0: 1356 in 2 places, all below massif's threshold (1.00%)
+ n1: 72704 0x5145424: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x40108F1: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x7: ???
+     n1: 72704 0x1FFEFFFEFD: ???
+      n1: 72704 0x1FFEFFFF05: ???
+       n1: 72704 0x1FFEFFFF0F: ???
+        n1: 72704 0x1FFEFFFF15: ???
+         n1: 72704 0x1FFEFFFF20: ???
+          n1: 72704 0x1FFEFFFF30: ???
+           n1: 72704 0x1FFEFFFF40: ???
+            n1: 72704 0x1FFEFFFF4C: ???
+             n0: 72704 0x1FFEFFFF5E: ???
+ n0: 72469 in 52 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=7
+#-----------
+time=9308338689
+mem_heap_B=5273885
+mem_heap_extra_B=1178499
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=10444758581
+mem_heap_B=5154317
+mem_heap_extra_B=1179251
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=11165930674
+mem_heap_B=5147237
+mem_heap_extra_B=1178435
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=12198516608
+mem_heap_B=5150661
+mem_heap_extra_B=1178835
+mem_stacks_B=0
+heap_tree=detailed
+n6: 5150661 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2637824 0x14C3F2: MEMORY_POOL<TIGER_STATE>::NewChunk() (memorypool.h:88)
+  n2: 2637824 0x14C032: MEMORY_POOL<TIGER_STATE>::Allocate() (memorypool.h:50)
+   n2: 1572864 0x14B03E: TIGER::Copy(STATE const&) const (tiger.cpp:18)
+    n1: 1040384 0x12EF52: MCTS::AddSample(VNODE*, STATE const&) (mcts.cpp:416)
+     n1: 1040384 0x12E9D9: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:338)
+      n1: 1040384 0x12ECD9: MCTS::SimulateQ(STATE&, QNODE&, int) (mcts.cpp:376)
+       n1: 1040384 0x12EA05: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:341)
+        n1: 1040384 0x12E846: MCTS::UCTSearch() (mcts.cpp:314)
+         n1: 1040384 0x12DF2C: MCTS::SelectAction() (mcts.cpp:227)
+          n1: 1040384 0x11640F: EXPERIMENT::Run(int) (experiment.cpp:109)
+           n1: 1040384 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+            n1: 1040384 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+             n0: 1040384 0x11C4B9: main (main.cpp:150)
+    n1: 532480 0x114BD0: BELIEF_STATE::Copy(BELIEF_STATE const&, SIMULATOR const&) (beliefstate.cpp:38)
+     n1: 532480 0x12D9C7: MCTS::Update(int, int, double) (mcts.cpp:146)
+      n1: 532480 0x1168AA: EXPERIMENT::Run(int) (experiment.cpp:156)
+       n1: 532480 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+        n1: 532480 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+         n0: 532480 0x11C4B9: main (main.cpp:150)
+   n2: 1064960 0x14B088: TIGER::CreateStartState() const (tiger.cpp:27)
+    n1: 1048576 0x12CC23: MCTS::MCTS(SIMULATOR const&, MCTS::PARAMS const&) (mcts.cpp:43)
+     n1: 1048576 0x116126: EXPERIMENT::Run(int) (experiment.cpp:80)
+      n1: 1048576 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+       n1: 1048576 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+        n0: 1048576 0x11C4B9: main (main.cpp:150)
+    n0: 16384 in 2 places, all below massif's threshold (1.00%)
+ n1: 1050624 0x14DE8E: __gnu_cxx::new_allocator<TIGER_STATE*>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n1: 1050624 0x14DC08: std::allocator_traits<std::allocator<TIGER_STATE*> >::allocate(std::allocator<TIGER_STATE*>&, unsigned long) (alloc_traits.h:436)
+   n2: 1050624 0x14D58C: std::_Vector_base<TIGER_STATE*, std::allocator<TIGER_STATE*> >::_M_allocate(unsigned long) (stl_vector.h:172)
+    n1: 1048576 0x14CBBA: void std::vector<TIGER_STATE*, std::allocator<TIGER_STATE*> >::_M_realloc_insert<TIGER_STATE* const&>(__gnu_cxx::__normal_iterator<TIGER_STATE**, std::vector<TIGER_STATE*, std::allocator<TIGER_STATE*> > >, TIGER_STATE* const&) (vector.tcc:406)
+     n1: 1048576 0x14C59C: std::vector<TIGER_STATE*, std::allocator<TIGER_STATE*> >::push_back(TIGER_STATE* const&) (stl_vector.h:948)
+      n1: 1048576 0x14C110: MEMORY_POOL<TIGER_STATE>::Free(TIGER_STATE*) (memorypool.h:63)
+       n1: 1048576 0x14B0E7: TIGER::FreeState(STATE*) const (tiger.cpp:36)
+        n1: 1048576 0x114A90: BELIEF_STATE::Free(SIMULATOR const&) (beliefstate.cpp:17)
+         n2: 1048576 0x13942D: VNODE::Free(VNODE*, SIMULATOR const&) (node.cpp:73)
+          n1: 1048576 0x12D834: MCTS::~MCTS() (mcts.cpp:127)
+           n1: 1048576 0x116EDC: EXPERIMENT::Run(int) (experiment.cpp:80)
+            n1: 1048576 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+             n1: 1048576 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+              n0: 1048576 0x11C4B9: main (main.cpp:150)
+          n0: 0 in 1 place, below massif's threshold (1.00%)
+    n0: 2048 in 1 place, below massif's threshold (1.00%)
+ n1: 799952 0x11ABBE: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n1: 799952 0x11A766: std::allocator_traits<std::allocator<int> >::allocate(std::allocator<int>&, unsigned long) (alloc_traits.h:436)
+   n2: 799952 0x119E72: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (stl_vector.h:172)
+    n1: 797892 0x143D66: int* std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >(unsigned long, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >) (stl_vector.h:1260)
+     n1: 797892 0x142BDF: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (vector.tcc:206)
+      n1: 797892 0x14BF91: TIGER_STATE::operator=(TIGER_STATE const&) (tiger.h:9)
+       n2: 797892 0x14B055: TIGER::Copy(STATE const&) const (tiger.cpp:19)
+        n1: 437188 0x12EF52: MCTS::AddSample(VNODE*, STATE const&) (mcts.cpp:416)
+         n1: 437188 0x12E9D9: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:338)
+          n1: 437188 0x12ECD9: MCTS::SimulateQ(STATE&, QNODE&, int) (mcts.cpp:376)
+           n1: 437188 0x12EA05: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:341)
+            n1: 437188 0x12E846: MCTS::UCTSearch() (mcts.cpp:314)
+             n1: 437188 0x12DF2C: MCTS::SelectAction() (mcts.cpp:227)
+              n1: 437188 0x11640F: EXPERIMENT::Run(int) (experiment.cpp:109)
+               n1: 437188 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+                n1: 437188 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+                 n0: 437188 0x11C4B9: main (main.cpp:150)
+        n1: 360704 0x114BD0: BELIEF_STATE::Copy(BELIEF_STATE const&, SIMULATOR const&) (beliefstate.cpp:38)
+         n1: 360704 0x12D9C7: MCTS::Update(int, int, double) (mcts.cpp:146)
+          n1: 360704 0x1168AA: EXPERIMENT::Run(int) (experiment.cpp:156)
+           n1: 360704 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+            n1: 360704 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+             n0: 360704 0x11C4B9: main (main.cpp:150)
+    n0: 2060 in 2 places, all below massif's threshold (1.00%)
+ n1: 524288 0x115932: __gnu_cxx::new_allocator<STATE*>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n1: 524288 0x11580E: std::allocator_traits<std::allocator<STATE*> >::allocate(std::allocator<STATE*>&, unsigned long) (alloc_traits.h:436)
+   n2: 524288 0x1156BE: std::_Vector_base<STATE*, std::allocator<STATE*> >::_M_allocate(unsigned long) (stl_vector.h:172)
+    n1: 524288 0x115258: void std::vector<STATE*, std::allocator<STATE*> >::_M_realloc_insert<STATE* const&>(__gnu_cxx::__normal_iterator<STATE**, std::vector<STATE*, std::allocator<STATE*> > >, STATE* const&) (vector.tcc:406)
+     n1: 524288 0x114F4E: std::vector<STATE*, std::allocator<STATE*> >::push_back(STATE* const&) (stl_vector.h:948)
+      n3: 524288 0x114B49: BELIEF_STATE::AddSample(STATE*) (beliefstate.cpp:30)
+       n1: 262144 0x12CC2E: MCTS::MCTS(SIMULATOR const&, MCTS::PARAMS const&) (mcts.cpp:43)
+        n1: 262144 0x116126: EXPERIMENT::Run(int) (experiment.cpp:80)
+         n1: 262144 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+          n1: 262144 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+           n0: 262144 0x11C4B9: main (main.cpp:150)
+       n1: 262144 0x12EF74: MCTS::AddSample(VNODE*, STATE const&) (mcts.cpp:417)
+        n1: 262144 0x12E9D9: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:338)
+         n1: 262144 0x12ECD9: MCTS::SimulateQ(STATE&, QNODE&, int) (mcts.cpp:376)
+          n1: 262144 0x12EA05: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:341)
+           n1: 262144 0x12E846: MCTS::UCTSearch() (mcts.cpp:314)
+            n1: 262144 0x12DF2C: MCTS::SelectAction() (mcts.cpp:227)
+             n1: 262144 0x11640F: EXPERIMENT::Run(int) (experiment.cpp:109)
+              n1: 262144 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+               n1: 262144 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+                n0: 262144 0x11C4B9: main (main.cpp:150)
+       n0: 0 in 1 place, below massif's threshold (1.00%)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x5145424: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x40108F1: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x7: ???
+     n1: 72704 0x1FFEFFFEFD: ???
+      n1: 72704 0x1FFEFFFF05: ???
+       n1: 72704 0x1FFEFFFF0F: ???
+        n1: 72704 0x1FFEFFFF15: ???
+         n1: 72704 0x1FFEFFFF20: ???
+          n1: 72704 0x1FFEFFFF30: ???
+           n1: 72704 0x1FFEFFFF40: ???
+            n1: 72704 0x1FFEFFFF4C: ???
+             n0: 72704 0x1FFEFFFF5E: ???
+ n0: 65269 in 52 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=11
+#-----------
+time=13422917582
+mem_heap_B=6281061
+mem_heap_extra_B=1039547
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=15077600839
+mem_heap_B=5630389
+mem_heap_extra_B=792851
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=16171193465
+mem_heap_B=7530749
+mem_heap_extra_B=1422075
+mem_stacks_B=0
+heap_tree=peak
+n5: 7530749 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2637824 0x14C3F2: MEMORY_POOL<TIGER_STATE>::NewChunk() (memorypool.h:88)
+  n2: 2637824 0x14C032: MEMORY_POOL<TIGER_STATE>::Allocate() (memorypool.h:50)
+   n2: 1572864 0x14B03E: TIGER::Copy(STATE const&) const (tiger.cpp:18)
+    n1: 1040384 0x12EF52: MCTS::AddSample(VNODE*, STATE const&) (mcts.cpp:416)
+     n1: 1040384 0x12E9D9: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:338)
+      n1: 1040384 0x12ECD9: MCTS::SimulateQ(STATE&, QNODE&, int) (mcts.cpp:376)
+       n1: 1040384 0x12EA05: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:341)
+        n1: 1040384 0x12E846: MCTS::UCTSearch() (mcts.cpp:314)
+         n1: 1040384 0x12DF2C: MCTS::SelectAction() (mcts.cpp:227)
+          n1: 1040384 0x11640F: EXPERIMENT::Run(int) (experiment.cpp:109)
+           n1: 1040384 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+            n1: 1040384 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+             n0: 1040384 0x11C4B9: main (main.cpp:150)
+    n1: 532480 0x114BD0: BELIEF_STATE::Copy(BELIEF_STATE const&, SIMULATOR const&) (beliefstate.cpp:38)
+     n1: 532480 0x12D9C7: MCTS::Update(int, int, double) (mcts.cpp:146)
+      n1: 532480 0x1168AA: EXPERIMENT::Run(int) (experiment.cpp:156)
+       n1: 532480 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+        n1: 532480 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+         n0: 532480 0x11C4B9: main (main.cpp:150)
+   n2: 1064960 0x14B088: TIGER::CreateStartState() const (tiger.cpp:27)
+    n1: 1048576 0x12CC23: MCTS::MCTS(SIMULATOR const&, MCTS::PARAMS const&) (mcts.cpp:43)
+     n1: 1048576 0x116126: EXPERIMENT::Run(int) (experiment.cpp:80)
+      n1: 1048576 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+       n1: 1048576 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+        n0: 1048576 0x11C4B9: main (main.cpp:150)
+    n0: 16384 in 2 places, all below massif's threshold (1.00%)
+ n1: 2278360 0x115932: __gnu_cxx::new_allocator<STATE*>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n1: 2278360 0x11580E: std::allocator_traits<std::allocator<STATE*> >::allocate(std::allocator<STATE*>&, unsigned long) (alloc_traits.h:436)
+   n2: 2278360 0x1156BE: std::_Vector_base<STATE*, std::allocator<STATE*> >::_M_allocate(unsigned long) (stl_vector.h:172)
+    n1: 1966080 0x115258: void std::vector<STATE*, std::allocator<STATE*> >::_M_realloc_insert<STATE* const&>(__gnu_cxx::__normal_iterator<STATE**, std::vector<STATE*, std::allocator<STATE*> > >, STATE* const&) (vector.tcc:406)
+     n1: 1966080 0x114F4E: std::vector<STATE*, std::allocator<STATE*> >::push_back(STATE* const&) (stl_vector.h:948)
+      n3: 1966080 0x114B49: BELIEF_STATE::AddSample(STATE*) (beliefstate.cpp:30)
+       n1: 1310720 0x12EF74: MCTS::AddSample(VNODE*, STATE const&) (mcts.cpp:417)
+        n1: 1310720 0x12E9D9: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:338)
+         n1: 1310720 0x12ECD9: MCTS::SimulateQ(STATE&, QNODE&, int) (mcts.cpp:376)
+          n1: 1310720 0x12EA05: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:341)
+           n1: 1310720 0x12E846: MCTS::UCTSearch() (mcts.cpp:314)
+            n1: 1310720 0x12DF2C: MCTS::SelectAction() (mcts.cpp:227)
+             n1: 1310720 0x11640F: EXPERIMENT::Run(int) (experiment.cpp:109)
+              n1: 1310720 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+               n1: 1310720 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+                n0: 1310720 0x11C4B9: main (main.cpp:150)
+       n1: 393216 0x114BE2: BELIEF_STATE::Copy(BELIEF_STATE const&, SIMULATOR const&) (beliefstate.cpp:38)
+        n1: 393216 0x12D9C7: MCTS::Update(int, int, double) (mcts.cpp:146)
+         n1: 393216 0x1168AA: EXPERIMENT::Run(int) (experiment.cpp:156)
+          n1: 393216 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+           n1: 393216 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+            n0: 393216 0x11C4B9: main (main.cpp:150)
+       n1: 262144 0x12CC2E: MCTS::MCTS(SIMULATOR const&, MCTS::PARAMS const&) (mcts.cpp:43)
+        n1: 262144 0x116126: EXPERIMENT::Run(int) (experiment.cpp:80)
+         n1: 262144 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+          n1: 262144 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+           n0: 262144 0x11C4B9: main (main.cpp:150)
+    n1: 312280 0x1325A4: STATE** std::vector<STATE*, std::allocator<STATE*> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<STATE* const*, std::vector<STATE*, std::allocator<STATE*> > > >(unsigned long, __gnu_cxx::__normal_iterator<STATE* const*, std::vector<STATE*, std::allocator<STATE*> > >, __gnu_cxx::__normal_iterator<STATE* const*, std::vector<STATE*, std::allocator<STATE*> > >) (stl_vector.h:1260)
+     n1: 312280 0x131815: std::vector<STATE*, std::allocator<STATE*> >::operator=(std::vector<STATE*, std::allocator<STATE*> > const&) (vector.tcc:206)
+      n1: 312280 0x131173: BELIEF_STATE::operator=(BELIEF_STATE const&) (beliefstate.h:9)
+       n1: 312280 0x12DB5D: MCTS::Update(int, int, double) (mcts.cpp:173)
+        n1: 312280 0x1168AA: EXPERIMENT::Run(int) (experiment.cpp:156)
+         n1: 312280 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+          n1: 312280 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+           n0: 312280 0x11C4B9: main (main.cpp:150)
+ n1: 1426688 0x11ABBE: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n1: 1426688 0x11A766: std::allocator_traits<std::allocator<int> >::allocate(std::allocator<int>&, unsigned long) (alloc_traits.h:436)
+   n2: 1426688 0x119E72: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (stl_vector.h:172)
+    n1: 1423984 0x143D66: int* std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >(unsigned long, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >) (stl_vector.h:1260)
+     n1: 1423984 0x142BDF: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (vector.tcc:206)
+      n1: 1423984 0x14BF91: TIGER_STATE::operator=(TIGER_STATE const&) (tiger.h:9)
+       n2: 1423984 0x14B055: TIGER::Copy(STATE const&) const (tiger.cpp:19)
+        n1: 755864 0x12EF52: MCTS::AddSample(VNODE*, STATE const&) (mcts.cpp:416)
+         n1: 755864 0x12E9D9: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:338)
+          n1: 755864 0x12ECD9: MCTS::SimulateQ(STATE&, QNODE&, int) (mcts.cpp:376)
+           n1: 755864 0x12EA05: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:341)
+            n1: 755864 0x12E846: MCTS::UCTSearch() (mcts.cpp:314)
+             n1: 755864 0x12DF2C: MCTS::SelectAction() (mcts.cpp:227)
+              n1: 755864 0x11640F: EXPERIMENT::Run(int) (experiment.cpp:109)
+               n1: 755864 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+                n1: 755864 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+                 n0: 755864 0x11C4B9: main (main.cpp:150)
+        n1: 668120 0x114BD0: BELIEF_STATE::Copy(BELIEF_STATE const&, SIMULATOR const&) (beliefstate.cpp:38)
+         n1: 668120 0x12D9C7: MCTS::Update(int, int, double) (mcts.cpp:146)
+          n1: 668120 0x1168AA: EXPERIMENT::Run(int) (experiment.cpp:156)
+           n1: 668120 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+            n1: 668120 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+             n0: 668120 0x11C4B9: main (main.cpp:150)
+    n0: 2704 in 2 places, all below massif's threshold (1.00%)
+ n1: 1050624 0x14DE8E: __gnu_cxx::new_allocator<TIGER_STATE*>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n1: 1050624 0x14DC08: std::allocator_traits<std::allocator<TIGER_STATE*> >::allocate(std::allocator<TIGER_STATE*>&, unsigned long) (alloc_traits.h:436)
+   n2: 1050624 0x14D58C: std::_Vector_base<TIGER_STATE*, std::allocator<TIGER_STATE*> >::_M_allocate(unsigned long) (stl_vector.h:172)
+    n1: 1048576 0x14CBBA: void std::vector<TIGER_STATE*, std::allocator<TIGER_STATE*> >::_M_realloc_insert<TIGER_STATE* const&>(__gnu_cxx::__normal_iterator<TIGER_STATE**, std::vector<TIGER_STATE*, std::allocator<TIGER_STATE*> > >, TIGER_STATE* const&) (vector.tcc:406)
+     n1: 1048576 0x14C59C: std::vector<TIGER_STATE*, std::allocator<TIGER_STATE*> >::push_back(TIGER_STATE* const&) (stl_vector.h:948)
+      n1: 1048576 0x14C110: MEMORY_POOL<TIGER_STATE>::Free(TIGER_STATE*) (memorypool.h:63)
+       n1: 1048576 0x14B0E7: TIGER::FreeState(STATE*) const (tiger.cpp:36)
+        n1: 1048576 0x114A90: BELIEF_STATE::Free(SIMULATOR const&) (beliefstate.cpp:17)
+         n2: 1048576 0x13942D: VNODE::Free(VNODE*, SIMULATOR const&) (node.cpp:73)
+          n1: 1048576 0x12D834: MCTS::~MCTS() (mcts.cpp:127)
+           n1: 1048576 0x116EDC: EXPERIMENT::Run(int) (experiment.cpp:80)
+            n1: 1048576 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+             n1: 1048576 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+              n0: 1048576 0x11C4B9: main (main.cpp:150)
+          n0: 0 in 1 place, below massif's threshold (1.00%)
+    n0: 2048 in 1 place, below massif's threshold (1.00%)
+ n0: 137253 in 53 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=14
+#-----------
+time=17451480606
+mem_heap_B=6501145
+mem_heap_extra_B=1425991
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=18796590336
+mem_heap_B=6046957
+mem_heap_extra_B=1425459
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=20432910718
+mem_heap_B=5805333
+mem_heap_extra_B=1416379
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=21645102760
+mem_heap_B=5526425
+mem_heap_extra_B=1411623
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=22717588826
+mem_heap_B=6908541
+mem_heap_extra_B=1413123
+mem_stacks_B=0
+heap_tree=detailed
+n5: 6908541 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2637824 0x14C3F2: MEMORY_POOL<TIGER_STATE>::NewChunk() (memorypool.h:88)
+  n2: 2637824 0x14C032: MEMORY_POOL<TIGER_STATE>::Allocate() (memorypool.h:50)
+   n2: 1572864 0x14B03E: TIGER::Copy(STATE const&) const (tiger.cpp:18)
+    n1: 1040384 0x12EF52: MCTS::AddSample(VNODE*, STATE const&) (mcts.cpp:416)
+     n1: 1040384 0x12E9D9: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:338)
+      n1: 1040384 0x12ECD9: MCTS::SimulateQ(STATE&, QNODE&, int) (mcts.cpp:376)
+       n1: 1040384 0x12EA05: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:341)
+        n1: 1040384 0x12E846: MCTS::UCTSearch() (mcts.cpp:314)
+         n1: 1040384 0x12DF2C: MCTS::SelectAction() (mcts.cpp:227)
+          n1: 1040384 0x11640F: EXPERIMENT::Run(int) (experiment.cpp:109)
+           n1: 1040384 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+            n1: 1040384 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+             n0: 1040384 0x11C4B9: main (main.cpp:150)
+    n1: 532480 0x114BD0: BELIEF_STATE::Copy(BELIEF_STATE const&, SIMULATOR const&) (beliefstate.cpp:38)
+     n1: 532480 0x12D9C7: MCTS::Update(int, int, double) (mcts.cpp:146)
+      n1: 532480 0x1168AA: EXPERIMENT::Run(int) (experiment.cpp:156)
+       n1: 532480 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+        n1: 532480 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+         n0: 532480 0x11C4B9: main (main.cpp:150)
+   n2: 1064960 0x14B088: TIGER::CreateStartState() const (tiger.cpp:27)
+    n1: 1048576 0x12CC23: MCTS::MCTS(SIMULATOR const&, MCTS::PARAMS const&) (mcts.cpp:43)
+     n1: 1048576 0x116126: EXPERIMENT::Run(int) (experiment.cpp:80)
+      n1: 1048576 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+       n1: 1048576 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+        n0: 1048576 0x11C4B9: main (main.cpp:150)
+    n0: 16384 in 2 places, all below massif's threshold (1.00%)
+ n1: 1638352 0x115932: __gnu_cxx::new_allocator<STATE*>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n1: 1638352 0x11580E: std::allocator_traits<std::allocator<STATE*> >::allocate(std::allocator<STATE*>&, unsigned long) (alloc_traits.h:436)
+   n2: 1638352 0x1156BE: std::_Vector_base<STATE*, std::allocator<STATE*> >::_M_allocate(unsigned long) (stl_vector.h:172)
+    n1: 1310720 0x115258: void std::vector<STATE*, std::allocator<STATE*> >::_M_realloc_insert<STATE* const&>(__gnu_cxx::__normal_iterator<STATE**, std::vector<STATE*, std::allocator<STATE*> > >, STATE* const&) (vector.tcc:406)
+     n1: 1310720 0x114F4E: std::vector<STATE*, std::allocator<STATE*> >::push_back(STATE* const&) (stl_vector.h:948)
+      n3: 1310720 0x114B49: BELIEF_STATE::AddSample(STATE*) (beliefstate.cpp:30)
+       n1: 786432 0x12EF74: MCTS::AddSample(VNODE*, STATE const&) (mcts.cpp:417)
+        n1: 786432 0x12E9D9: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:338)
+         n1: 786432 0x12ECD9: MCTS::SimulateQ(STATE&, QNODE&, int) (mcts.cpp:376)
+          n1: 786432 0x12EA05: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:341)
+           n1: 786432 0x12E846: MCTS::UCTSearch() (mcts.cpp:314)
+            n1: 786432 0x12DF2C: MCTS::SelectAction() (mcts.cpp:227)
+             n1: 786432 0x11640F: EXPERIMENT::Run(int) (experiment.cpp:109)
+              n1: 786432 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+               n1: 786432 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+                n0: 786432 0x11C4B9: main (main.cpp:150)
+       n1: 262144 0x114BE2: BELIEF_STATE::Copy(BELIEF_STATE const&, SIMULATOR const&) (beliefstate.cpp:38)
+        n1: 262144 0x12D9C7: MCTS::Update(int, int, double) (mcts.cpp:146)
+         n1: 262144 0x1168AA: EXPERIMENT::Run(int) (experiment.cpp:156)
+          n1: 262144 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+           n1: 262144 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+            n0: 262144 0x11C4B9: main (main.cpp:150)
+       n1: 262144 0x12CC2E: MCTS::MCTS(SIMULATOR const&, MCTS::PARAMS const&) (mcts.cpp:43)
+        n1: 262144 0x116126: EXPERIMENT::Run(int) (experiment.cpp:80)
+         n1: 262144 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+          n1: 262144 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+           n0: 262144 0x11C4B9: main (main.cpp:150)
+    n1: 327632 0x1325A4: STATE** std::vector<STATE*, std::allocator<STATE*> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<STATE* const*, std::vector<STATE*, std::allocator<STATE*> > > >(unsigned long, __gnu_cxx::__normal_iterator<STATE* const*, std::vector<STATE*, std::allocator<STATE*> > >, __gnu_cxx::__normal_iterator<STATE* const*, std::vector<STATE*, std::allocator<STATE*> > >) (stl_vector.h:1260)
+     n1: 327632 0x131815: std::vector<STATE*, std::allocator<STATE*> >::operator=(std::vector<STATE*, std::allocator<STATE*> > const&) (vector.tcc:206)
+      n1: 327632 0x131173: BELIEF_STATE::operator=(BELIEF_STATE const&) (beliefstate.h:9)
+       n1: 327632 0x12DB5D: MCTS::Update(int, int, double) (mcts.cpp:173)
+        n1: 327632 0x1168AA: EXPERIMENT::Run(int) (experiment.cpp:156)
+         n1: 327632 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+          n1: 327632 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+           n0: 327632 0x11C4B9: main (main.cpp:150)
+ n1: 1445208 0x11ABBE: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n1: 1445208 0x11A766: std::allocator_traits<std::allocator<int> >::allocate(std::allocator<int>&, unsigned long) (alloc_traits.h:436)
+   n2: 1445208 0x119E72: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (stl_vector.h:172)
+    n1: 1441460 0x143D66: int* std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >(unsigned long, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >) (stl_vector.h:1260)
+     n1: 1441460 0x142BDF: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (vector.tcc:206)
+      n1: 1441460 0x14BF91: TIGER_STATE::operator=(TIGER_STATE const&) (tiger.h:9)
+       n2: 1441460 0x14B055: TIGER::Copy(STATE const&) const (tiger.cpp:19)
+        n1: 776232 0x12EF52: MCTS::AddSample(VNODE*, STATE const&) (mcts.cpp:416)
+         n1: 776232 0x12E9D9: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:338)
+          n1: 776232 0x12ECD9: MCTS::SimulateQ(STATE&, QNODE&, int) (mcts.cpp:376)
+           n1: 776232 0x12EA05: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:341)
+            n1: 776232 0x12E846: MCTS::UCTSearch() (mcts.cpp:314)
+             n1: 776232 0x12DF2C: MCTS::SelectAction() (mcts.cpp:227)
+              n1: 776232 0x11640F: EXPERIMENT::Run(int) (experiment.cpp:109)
+               n1: 776232 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+                n1: 776232 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+                 n0: 776232 0x11C4B9: main (main.cpp:150)
+        n1: 665228 0x114BD0: BELIEF_STATE::Copy(BELIEF_STATE const&, SIMULATOR const&) (beliefstate.cpp:38)
+         n1: 665228 0x12D9C7: MCTS::Update(int, int, double) (mcts.cpp:146)
+          n1: 665228 0x1168AA: EXPERIMENT::Run(int) (experiment.cpp:156)
+           n1: 665228 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+            n1: 665228 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+             n0: 665228 0x11C4B9: main (main.cpp:150)
+    n0: 3748 in 2 places, all below massif's threshold (1.00%)
+ n1: 1050624 0x14DE8E: __gnu_cxx::new_allocator<TIGER_STATE*>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n1: 1050624 0x14DC08: std::allocator_traits<std::allocator<TIGER_STATE*> >::allocate(std::allocator<TIGER_STATE*>&, unsigned long) (alloc_traits.h:436)
+   n2: 1050624 0x14D58C: std::_Vector_base<TIGER_STATE*, std::allocator<TIGER_STATE*> >::_M_allocate(unsigned long) (stl_vector.h:172)
+    n1: 1048576 0x14CBBA: void std::vector<TIGER_STATE*, std::allocator<TIGER_STATE*> >::_M_realloc_insert<TIGER_STATE* const&>(__gnu_cxx::__normal_iterator<TIGER_STATE**, std::vector<TIGER_STATE*, std::allocator<TIGER_STATE*> > >, TIGER_STATE* const&) (vector.tcc:406)
+     n1: 1048576 0x14C59C: std::vector<TIGER_STATE*, std::allocator<TIGER_STATE*> >::push_back(TIGER_STATE* const&) (stl_vector.h:948)
+      n1: 1048576 0x14C110: MEMORY_POOL<TIGER_STATE>::Free(TIGER_STATE*) (memorypool.h:63)
+       n1: 1048576 0x14B0E7: TIGER::FreeState(STATE*) const (tiger.cpp:36)
+        n1: 1048576 0x114A90: BELIEF_STATE::Free(SIMULATOR const&) (beliefstate.cpp:17)
+         n2: 1048576 0x13942D: VNODE::Free(VNODE*, SIMULATOR const&) (node.cpp:73)
+          n1: 1048576 0x12D834: MCTS::~MCTS() (mcts.cpp:127)
+           n1: 1048576 0x116EDC: EXPERIMENT::Run(int) (experiment.cpp:80)
+            n1: 1048576 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+             n1: 1048576 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+              n0: 1048576 0x11C4B9: main (main.cpp:150)
+          n0: 0 in 1 place, below massif's threshold (1.00%)
+    n0: 2048 in 1 place, below massif's threshold (1.00%)
+ n0: 136533 in 53 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=19
+#-----------
+time=23729640176
+mem_heap_B=6118261
+mem_heap_extra_B=1413971
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=24776430688
+mem_heap_B=6186437
+mem_heap_extra_B=1412411
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=25894220937
+mem_heap_B=6066785
+mem_heap_extra_B=1415503
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=26736289272
+mem_heap_B=6056061
+mem_heap_extra_B=1413067
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=28115205662
+mem_heap_B=6325649
+mem_heap_extra_B=1408775
+mem_stacks_B=0
+heap_tree=detailed
+n5: 6325649 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2637824 0x14C3F2: MEMORY_POOL<TIGER_STATE>::NewChunk() (memorypool.h:88)
+  n2: 2637824 0x14C032: MEMORY_POOL<TIGER_STATE>::Allocate() (memorypool.h:50)
+   n2: 1572864 0x14B03E: TIGER::Copy(STATE const&) const (tiger.cpp:18)
+    n1: 1040384 0x12EF52: MCTS::AddSample(VNODE*, STATE const&) (mcts.cpp:416)
+     n1: 1040384 0x12E9D9: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:338)
+      n1: 1040384 0x12ECD9: MCTS::SimulateQ(STATE&, QNODE&, int) (mcts.cpp:376)
+       n1: 1040384 0x12EA05: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:341)
+        n1: 1040384 0x12E846: MCTS::UCTSearch() (mcts.cpp:314)
+         n1: 1040384 0x12DF2C: MCTS::SelectAction() (mcts.cpp:227)
+          n1: 1040384 0x11640F: EXPERIMENT::Run(int) (experiment.cpp:109)
+           n1: 1040384 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+            n1: 1040384 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+             n0: 1040384 0x11C4B9: main (main.cpp:150)
+    n1: 532480 0x114BD0: BELIEF_STATE::Copy(BELIEF_STATE const&, SIMULATOR const&) (beliefstate.cpp:38)
+     n1: 532480 0x12D9C7: MCTS::Update(int, int, double) (mcts.cpp:146)
+      n1: 532480 0x1168AA: EXPERIMENT::Run(int) (experiment.cpp:156)
+       n1: 532480 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+        n1: 532480 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+         n0: 532480 0x11C4B9: main (main.cpp:150)
+   n2: 1064960 0x14B088: TIGER::CreateStartState() const (tiger.cpp:27)
+    n1: 1048576 0x12CC23: MCTS::MCTS(SIMULATOR const&, MCTS::PARAMS const&) (mcts.cpp:43)
+     n1: 1048576 0x116126: EXPERIMENT::Run(int) (experiment.cpp:80)
+      n1: 1048576 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+       n1: 1048576 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+        n0: 1048576 0x11C4B9: main (main.cpp:150)
+    n0: 16384 in 2 places, all below massif's threshold (1.00%)
+ n1: 1450356 0x11ABBE: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n1: 1450356 0x11A766: std::allocator_traits<std::allocator<int> >::allocate(std::allocator<int>&, unsigned long) (alloc_traits.h:436)
+   n2: 1450356 0x119E72: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (stl_vector.h:172)
+    n1: 1445804 0x143D66: int* std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >(unsigned long, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >) (stl_vector.h:1260)
+     n1: 1445804 0x142BDF: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (vector.tcc:206)
+      n1: 1445804 0x14BF91: TIGER_STATE::operator=(TIGER_STATE const&) (tiger.h:9)
+       n2: 1445804 0x14B055: TIGER::Copy(STATE const&) const (tiger.cpp:19)
+        n1: 779296 0x12EF52: MCTS::AddSample(VNODE*, STATE const&) (mcts.cpp:416)
+         n1: 779296 0x12E9D9: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:338)
+          n1: 779296 0x12ECD9: MCTS::SimulateQ(STATE&, QNODE&, int) (mcts.cpp:376)
+           n1: 779296 0x12EA05: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:341)
+            n1: 779296 0x12E846: MCTS::UCTSearch() (mcts.cpp:314)
+             n1: 779296 0x12DF2C: MCTS::SelectAction() (mcts.cpp:227)
+              n1: 779296 0x11640F: EXPERIMENT::Run(int) (experiment.cpp:109)
+               n1: 779296 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+                n1: 779296 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+                 n0: 779296 0x11C4B9: main (main.cpp:150)
+        n1: 666508 0x114BD0: BELIEF_STATE::Copy(BELIEF_STATE const&, SIMULATOR const&) (beliefstate.cpp:38)
+         n1: 666508 0x12D9C7: MCTS::Update(int, int, double) (mcts.cpp:146)
+          n1: 666508 0x1168AA: EXPERIMENT::Run(int) (experiment.cpp:156)
+           n1: 666508 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+            n1: 666508 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+             n0: 666508 0x11C4B9: main (main.cpp:150)
+    n0: 4552 in 2 places, all below massif's threshold (1.00%)
+ n1: 1050624 0x14DE8E: __gnu_cxx::new_allocator<TIGER_STATE*>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n1: 1050624 0x14DC08: std::allocator_traits<std::allocator<TIGER_STATE*> >::allocate(std::allocator<TIGER_STATE*>&, unsigned long) (alloc_traits.h:436)
+   n2: 1050624 0x14D58C: std::_Vector_base<TIGER_STATE*, std::allocator<TIGER_STATE*> >::_M_allocate(unsigned long) (stl_vector.h:172)
+    n1: 1048576 0x14CBBA: void std::vector<TIGER_STATE*, std::allocator<TIGER_STATE*> >::_M_realloc_insert<TIGER_STATE* const&>(__gnu_cxx::__normal_iterator<TIGER_STATE**, std::vector<TIGER_STATE*, std::allocator<TIGER_STATE*> > >, TIGER_STATE* const&) (vector.tcc:406)
+     n1: 1048576 0x14C59C: std::vector<TIGER_STATE*, std::allocator<TIGER_STATE*> >::push_back(TIGER_STATE* const&) (stl_vector.h:948)
+      n1: 1048576 0x14C110: MEMORY_POOL<TIGER_STATE>::Free(TIGER_STATE*) (memorypool.h:63)
+       n1: 1048576 0x14B0E7: TIGER::FreeState(STATE*) const (tiger.cpp:36)
+        n1: 1048576 0x114A90: BELIEF_STATE::Free(SIMULATOR const&) (beliefstate.cpp:17)
+         n2: 1048576 0x13942D: VNODE::Free(VNODE*, SIMULATOR const&) (node.cpp:73)
+          n1: 1048576 0x12D834: MCTS::~MCTS() (mcts.cpp:127)
+           n1: 1048576 0x116EDC: EXPERIMENT::Run(int) (experiment.cpp:80)
+            n1: 1048576 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+             n1: 1048576 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+              n0: 1048576 0x11C4B9: main (main.cpp:150)
+          n0: 0 in 1 place, below massif's threshold (1.00%)
+    n0: 2048 in 1 place, below massif's threshold (1.00%)
+ n1: 1048872 0x115932: __gnu_cxx::new_allocator<STATE*>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n1: 1048872 0x11580E: std::allocator_traits<std::allocator<STATE*> >::allocate(std::allocator<STATE*>&, unsigned long) (alloc_traits.h:436)
+   n2: 1048872 0x1156BE: std::_Vector_base<STATE*, std::allocator<STATE*> >::_M_allocate(unsigned long) (stl_vector.h:172)
+    n1: 917504 0x115258: void std::vector<STATE*, std::allocator<STATE*> >::_M_realloc_insert<STATE* const&>(__gnu_cxx::__normal_iterator<STATE**, std::vector<STATE*, std::allocator<STATE*> > >, STATE* const&) (vector.tcc:406)
+     n1: 917504 0x114F4E: std::vector<STATE*, std::allocator<STATE*> >::push_back(STATE* const&) (stl_vector.h:948)
+      n3: 917504 0x114B49: BELIEF_STATE::AddSample(STATE*) (beliefstate.cpp:30)
+       n1: 655360 0x12EF74: MCTS::AddSample(VNODE*, STATE const&) (mcts.cpp:417)
+        n1: 655360 0x12E9D9: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:338)
+         n1: 655360 0x12ECD9: MCTS::SimulateQ(STATE&, QNODE&, int) (mcts.cpp:376)
+          n1: 655360 0x12EA05: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:341)
+           n1: 655360 0x12E846: MCTS::UCTSearch() (mcts.cpp:314)
+            n1: 655360 0x12DF2C: MCTS::SelectAction() (mcts.cpp:227)
+             n1: 655360 0x11640F: EXPERIMENT::Run(int) (experiment.cpp:109)
+              n1: 655360 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+               n1: 655360 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+                n0: 655360 0x11C4B9: main (main.cpp:150)
+       n1: 262144 0x12CC2E: MCTS::MCTS(SIMULATOR const&, MCTS::PARAMS const&) (mcts.cpp:43)
+        n1: 262144 0x116126: EXPERIMENT::Run(int) (experiment.cpp:80)
+         n1: 262144 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+          n1: 262144 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+           n0: 262144 0x11C4B9: main (main.cpp:150)
+       n0: 0 in 1 place, below massif's threshold (1.00%)
+    n1: 131368 0x1325A4: STATE** std::vector<STATE*, std::allocator<STATE*> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<STATE* const*, std::vector<STATE*, std::allocator<STATE*> > > >(unsigned long, __gnu_cxx::__normal_iterator<STATE* const*, std::vector<STATE*, std::allocator<STATE*> > >, __gnu_cxx::__normal_iterator<STATE* const*, std::vector<STATE*, std::allocator<STATE*> > >) (stl_vector.h:1260)
+     n1: 131368 0x131815: std::vector<STATE*, std::allocator<STATE*> >::operator=(std::vector<STATE*, std::allocator<STATE*> > const&) (vector.tcc:206)
+      n1: 131368 0x131173: BELIEF_STATE::operator=(BELIEF_STATE const&) (beliefstate.h:9)
+       n1: 131368 0x12DB5D: MCTS::Update(int, int, double) (mcts.cpp:173)
+        n1: 131368 0x1168AA: EXPERIMENT::Run(int) (experiment.cpp:156)
+         n1: 131368 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+          n1: 131368 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+           n0: 131368 0x11C4B9: main (main.cpp:150)
+ n0: 137973 in 53 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=24
+#-----------
+time=29182655217
+mem_heap_B=6059257
+mem_heap_extra_B=1407855
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=29775744186
+mem_heap_B=5927753
+mem_heap_extra_B=1407855
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=30926138724
+mem_heap_B=6063621
+mem_heap_extra_B=1408555
+mem_stacks_B=0
+heap_tree=detailed
+n5: 6063621 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2637824 0x14C3F2: MEMORY_POOL<TIGER_STATE>::NewChunk() (memorypool.h:88)
+  n2: 2637824 0x14C032: MEMORY_POOL<TIGER_STATE>::Allocate() (memorypool.h:50)
+   n2: 1572864 0x14B03E: TIGER::Copy(STATE const&) const (tiger.cpp:18)
+    n1: 1040384 0x12EF52: MCTS::AddSample(VNODE*, STATE const&) (mcts.cpp:416)
+     n1: 1040384 0x12E9D9: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:338)
+      n1: 1040384 0x12ECD9: MCTS::SimulateQ(STATE&, QNODE&, int) (mcts.cpp:376)
+       n1: 1040384 0x12EA05: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:341)
+        n1: 1040384 0x12E846: MCTS::UCTSearch() (mcts.cpp:314)
+         n1: 1040384 0x12DF2C: MCTS::SelectAction() (mcts.cpp:227)
+          n1: 1040384 0x11640F: EXPERIMENT::Run(int) (experiment.cpp:109)
+           n1: 1040384 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+            n1: 1040384 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+             n0: 1040384 0x11C4B9: main (main.cpp:150)
+    n1: 532480 0x114BD0: BELIEF_STATE::Copy(BELIEF_STATE const&, SIMULATOR const&) (beliefstate.cpp:38)
+     n1: 532480 0x12D9C7: MCTS::Update(int, int, double) (mcts.cpp:146)
+      n1: 532480 0x1168AA: EXPERIMENT::Run(int) (experiment.cpp:156)
+       n1: 532480 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+        n1: 532480 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+         n0: 532480 0x11C4B9: main (main.cpp:150)
+   n2: 1064960 0x14B088: TIGER::CreateStartState() const (tiger.cpp:27)
+    n1: 1048576 0x12CC23: MCTS::MCTS(SIMULATOR const&, MCTS::PARAMS const&) (mcts.cpp:43)
+     n1: 1048576 0x116126: EXPERIMENT::Run(int) (experiment.cpp:80)
+      n1: 1048576 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+       n1: 1048576 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+        n0: 1048576 0x11C4B9: main (main.cpp:150)
+    n0: 16384 in 2 places, all below massif's threshold (1.00%)
+ n1: 1450768 0x11ABBE: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n1: 1450768 0x11A766: std::allocator_traits<std::allocator<int> >::allocate(std::allocator<int>&, unsigned long) (alloc_traits.h:436)
+   n2: 1450768 0x119E72: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (stl_vector.h:172)
+    n1: 1445888 0x143D66: int* std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >(unsigned long, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >) (stl_vector.h:1260)
+     n1: 1445888 0x142BDF: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (vector.tcc:206)
+      n1: 1445888 0x14BF91: TIGER_STATE::operator=(TIGER_STATE const&) (tiger.h:9)
+       n2: 1445888 0x14B055: TIGER::Copy(STATE const&) const (tiger.cpp:19)
+        n1: 779656 0x12EF52: MCTS::AddSample(VNODE*, STATE const&) (mcts.cpp:416)
+         n1: 779656 0x12E9D9: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:338)
+          n1: 779656 0x12ECD9: MCTS::SimulateQ(STATE&, QNODE&, int) (mcts.cpp:376)
+           n1: 779656 0x12EA05: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:341)
+            n1: 779656 0x12E846: MCTS::UCTSearch() (mcts.cpp:314)
+             n1: 779656 0x12DF2C: MCTS::SelectAction() (mcts.cpp:227)
+              n1: 779656 0x11640F: EXPERIMENT::Run(int) (experiment.cpp:109)
+               n1: 779656 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+                n1: 779656 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+                 n0: 779656 0x11C4B9: main (main.cpp:150)
+        n1: 666232 0x114BD0: BELIEF_STATE::Copy(BELIEF_STATE const&, SIMULATOR const&) (beliefstate.cpp:38)
+         n1: 666232 0x12D9C7: MCTS::Update(int, int, double) (mcts.cpp:146)
+          n1: 666232 0x1168AA: EXPERIMENT::Run(int) (experiment.cpp:156)
+           n1: 666232 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+            n1: 666232 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+             n0: 666232 0x11C4B9: main (main.cpp:150)
+    n0: 4880 in 2 places, all below massif's threshold (1.00%)
+ n1: 1050624 0x14DE8E: __gnu_cxx::new_allocator<TIGER_STATE*>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n1: 1050624 0x14DC08: std::allocator_traits<std::allocator<TIGER_STATE*> >::allocate(std::allocator<TIGER_STATE*>&, unsigned long) (alloc_traits.h:436)
+   n2: 1050624 0x14D58C: std::_Vector_base<TIGER_STATE*, std::allocator<TIGER_STATE*> >::_M_allocate(unsigned long) (stl_vector.h:172)
+    n1: 1048576 0x14CBBA: void std::vector<TIGER_STATE*, std::allocator<TIGER_STATE*> >::_M_realloc_insert<TIGER_STATE* const&>(__gnu_cxx::__normal_iterator<TIGER_STATE**, std::vector<TIGER_STATE*, std::allocator<TIGER_STATE*> > >, TIGER_STATE* const&) (vector.tcc:406)
+     n1: 1048576 0x14C59C: std::vector<TIGER_STATE*, std::allocator<TIGER_STATE*> >::push_back(TIGER_STATE* const&) (stl_vector.h:948)
+      n1: 1048576 0x14C110: MEMORY_POOL<TIGER_STATE>::Free(TIGER_STATE*) (memorypool.h:63)
+       n1: 1048576 0x14B0E7: TIGER::FreeState(STATE*) const (tiger.cpp:36)
+        n1: 1048576 0x114A90: BELIEF_STATE::Free(SIMULATOR const&) (beliefstate.cpp:17)
+         n2: 1048576 0x13942D: VNODE::Free(VNODE*, SIMULATOR const&) (node.cpp:73)
+          n1: 1048576 0x12D834: MCTS::~MCTS() (mcts.cpp:127)
+           n1: 1048576 0x116EDC: EXPERIMENT::Run(int) (experiment.cpp:80)
+            n1: 1048576 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+             n1: 1048576 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+              n0: 1048576 0x11C4B9: main (main.cpp:150)
+          n0: 0 in 1 place, below massif's threshold (1.00%)
+    n0: 2048 in 1 place, below massif's threshold (1.00%)
+ n1: 786432 0x115932: __gnu_cxx::new_allocator<STATE*>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n1: 786432 0x11580E: std::allocator_traits<std::allocator<STATE*> >::allocate(std::allocator<STATE*>&, unsigned long) (alloc_traits.h:436)
+   n2: 786432 0x1156BE: std::_Vector_base<STATE*, std::allocator<STATE*> >::_M_allocate(unsigned long) (stl_vector.h:172)
+    n1: 786432 0x115258: void std::vector<STATE*, std::allocator<STATE*> >::_M_realloc_insert<STATE* const&>(__gnu_cxx::__normal_iterator<STATE**, std::vector<STATE*, std::allocator<STATE*> > >, STATE* const&) (vector.tcc:406)
+     n1: 786432 0x114F4E: std::vector<STATE*, std::allocator<STATE*> >::push_back(STATE* const&) (stl_vector.h:948)
+      n3: 786432 0x114B49: BELIEF_STATE::AddSample(STATE*) (beliefstate.cpp:30)
+       n1: 524288 0x12EF74: MCTS::AddSample(VNODE*, STATE const&) (mcts.cpp:417)
+        n1: 524288 0x12E9D9: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:338)
+         n1: 524288 0x12ECD9: MCTS::SimulateQ(STATE&, QNODE&, int) (mcts.cpp:376)
+          n1: 524288 0x12EA05: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:341)
+           n1: 524288 0x12E846: MCTS::UCTSearch() (mcts.cpp:314)
+            n1: 524288 0x12DF2C: MCTS::SelectAction() (mcts.cpp:227)
+             n1: 524288 0x11640F: EXPERIMENT::Run(int) (experiment.cpp:109)
+              n1: 524288 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+               n1: 524288 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+                n0: 524288 0x11C4B9: main (main.cpp:150)
+       n1: 262144 0x12CC2E: MCTS::MCTS(SIMULATOR const&, MCTS::PARAMS const&) (mcts.cpp:43)
+        n1: 262144 0x116126: EXPERIMENT::Run(int) (experiment.cpp:80)
+         n1: 262144 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+          n1: 262144 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+           n0: 262144 0x11C4B9: main (main.cpp:150)
+       n0: 0 in 1 place, below massif's threshold (1.00%)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n0: 137973 in 53 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=27
+#-----------
+time=31799639760
+mem_heap_B=5801473
+mem_heap_extra_B=1408511
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=33136433123
+mem_heap_B=6059797
+mem_heap_extra_B=1407739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=34057768713
+mem_heap_B=6798137
+mem_heap_extra_B=1408751
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=35498467020
+mem_heap_B=5805145
+mem_heap_extra_B=1405703
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=36429504323
+mem_heap_B=6559021
+mem_heap_extra_B=1406131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=37377472770
+mem_heap_B=6164469
+mem_heap_extra_B=1405283
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=38778400765
+mem_heap_B=6516781
+mem_heap_extra_B=1404507
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=39719630249
+mem_heap_B=5801009
+mem_heap_extra_B=1404575
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=40629362983
+mem_heap_B=6197893
+mem_heap_extra_B=1409051
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=41999906555
+mem_heap_B=6074769
+mem_heap_extra_B=1406823
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=43496385783
+mem_heap_B=6659785
+mem_heap_extra_B=1406631
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=44868379269
+mem_heap_B=5677041
+mem_heap_extra_B=1405919
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=46233970281
+mem_heap_B=5544633
+mem_heap_extra_B=1405783
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=47153223916
+mem_heap_B=5684873
+mem_heap_extra_B=1407479
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=48101306585
+mem_heap_B=6204125
+mem_heap_extra_B=1406835
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=49012841274
+mem_heap_B=6070217
+mem_heap_extra_B=1406031
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=49948358170
+mem_heap_B=5809377
+mem_heap_extra_B=1406119
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=50963939005
+mem_heap_B=6071937
+mem_heap_extra_B=1406199
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=51889429787
+mem_heap_B=5581657
+mem_heap_extra_B=1406351
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=52869670855
+mem_heap_B=6078717
+mem_heap_extra_B=1407659
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=54312025766
+mem_heap_B=5813617
+mem_heap_extra_B=1406839
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=55227254856
+mem_heap_B=6162201
+mem_heap_extra_B=1407799
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=56283901376
+mem_heap_B=5812165
+mem_heap_extra_B=1406475
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=56877189256
+mem_heap_B=6730801
+mem_heap_extra_B=1406663
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=57499721417
+mem_heap_B=5943025
+mem_heap_extra_B=1406583
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=58123786651
+mem_heap_B=6139797
+mem_heap_extra_B=1406931
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=58732338659
+mem_heap_B=6197509
+mem_heap_extra_B=1408083
+mem_stacks_B=0
+heap_tree=detailed
+n5: 6197509 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2646016 0x14C3F2: MEMORY_POOL<TIGER_STATE>::NewChunk() (memorypool.h:88)
+  n2: 2646016 0x14C032: MEMORY_POOL<TIGER_STATE>::Allocate() (memorypool.h:50)
+   n2: 1581056 0x14B03E: TIGER::Copy(STATE const&) const (tiger.cpp:18)
+    n1: 1040384 0x12EF52: MCTS::AddSample(VNODE*, STATE const&) (mcts.cpp:416)
+     n1: 1040384 0x12E9D9: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:338)
+      n1: 1040384 0x12ECD9: MCTS::SimulateQ(STATE&, QNODE&, int) (mcts.cpp:376)
+       n1: 1040384 0x12EA05: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:341)
+        n1: 1040384 0x12E846: MCTS::UCTSearch() (mcts.cpp:314)
+         n1: 1040384 0x12DF2C: MCTS::SelectAction() (mcts.cpp:227)
+          n1: 1040384 0x11640F: EXPERIMENT::Run(int) (experiment.cpp:109)
+           n1: 1040384 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+            n1: 1040384 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+             n0: 1040384 0x11C4B9: main (main.cpp:150)
+    n1: 540672 0x114BD0: BELIEF_STATE::Copy(BELIEF_STATE const&, SIMULATOR const&) (beliefstate.cpp:38)
+     n1: 540672 0x12D9C7: MCTS::Update(int, int, double) (mcts.cpp:146)
+      n1: 540672 0x1168AA: EXPERIMENT::Run(int) (experiment.cpp:156)
+       n1: 540672 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+        n1: 540672 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+         n0: 540672 0x11C4B9: main (main.cpp:150)
+   n2: 1064960 0x14B088: TIGER::CreateStartState() const (tiger.cpp:27)
+    n1: 1048576 0x12CC23: MCTS::MCTS(SIMULATOR const&, MCTS::PARAMS const&) (mcts.cpp:43)
+     n1: 1048576 0x116126: EXPERIMENT::Run(int) (experiment.cpp:80)
+      n1: 1048576 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+       n1: 1048576 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+        n0: 1048576 0x11C4B9: main (main.cpp:150)
+    n0: 16384 in 2 places, all below massif's threshold (1.00%)
+ n1: 1457320 0x11ABBE: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n1: 1457320 0x11A766: std::allocator_traits<std::allocator<int> >::allocate(std::allocator<int>&, unsigned long) (alloc_traits.h:436)
+   n2: 1457320 0x119E72: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (stl_vector.h:172)
+    n1: 1448416 0x143D66: int* std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >(unsigned long, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >) (stl_vector.h:1260)
+     n1: 1448416 0x142BDF: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (vector.tcc:206)
+      n1: 1448416 0x14BF91: TIGER_STATE::operator=(TIGER_STATE const&) (tiger.h:9)
+       n2: 1448416 0x14B055: TIGER::Copy(STATE const&) const (tiger.cpp:19)
+        n1: 783384 0x12EF52: MCTS::AddSample(VNODE*, STATE const&) (mcts.cpp:416)
+         n1: 783384 0x12E9D9: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:338)
+          n1: 783384 0x12ECD9: MCTS::SimulateQ(STATE&, QNODE&, int) (mcts.cpp:376)
+           n1: 783384 0x12EA05: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:341)
+            n1: 783384 0x12E846: MCTS::UCTSearch() (mcts.cpp:314)
+             n1: 783384 0x12DF2C: MCTS::SelectAction() (mcts.cpp:227)
+              n1: 783384 0x11640F: EXPERIMENT::Run(int) (experiment.cpp:109)
+               n1: 783384 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+                n1: 783384 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+                 n0: 783384 0x11C4B9: main (main.cpp:150)
+        n1: 665032 0x114BD0: BELIEF_STATE::Copy(BELIEF_STATE const&, SIMULATOR const&) (beliefstate.cpp:38)
+         n1: 665032 0x12D9C7: MCTS::Update(int, int, double) (mcts.cpp:146)
+          n1: 665032 0x1168AA: EXPERIMENT::Run(int) (experiment.cpp:156)
+           n1: 665032 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+            n1: 665032 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+             n0: 665032 0x11C4B9: main (main.cpp:150)
+    n0: 8904 in 2 places, all below massif's threshold (1.00%)
+ n1: 1050624 0x14DE8E: __gnu_cxx::new_allocator<TIGER_STATE*>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n1: 1050624 0x14DC08: std::allocator_traits<std::allocator<TIGER_STATE*> >::allocate(std::allocator<TIGER_STATE*>&, unsigned long) (alloc_traits.h:436)
+   n2: 1050624 0x14D58C: std::_Vector_base<TIGER_STATE*, std::allocator<TIGER_STATE*> >::_M_allocate(unsigned long) (stl_vector.h:172)
+    n1: 1048576 0x14CBBA: void std::vector<TIGER_STATE*, std::allocator<TIGER_STATE*> >::_M_realloc_insert<TIGER_STATE* const&>(__gnu_cxx::__normal_iterator<TIGER_STATE**, std::vector<TIGER_STATE*, std::allocator<TIGER_STATE*> > >, TIGER_STATE* const&) (vector.tcc:406)
+     n1: 1048576 0x14C59C: std::vector<TIGER_STATE*, std::allocator<TIGER_STATE*> >::push_back(TIGER_STATE* const&) (stl_vector.h:948)
+      n1: 1048576 0x14C110: MEMORY_POOL<TIGER_STATE>::Free(TIGER_STATE*) (memorypool.h:63)
+       n1: 1048576 0x14B0E7: TIGER::FreeState(STATE*) const (tiger.cpp:36)
+        n1: 1048576 0x114A90: BELIEF_STATE::Free(SIMULATOR const&) (beliefstate.cpp:17)
+         n2: 1048576 0x13942D: VNODE::Free(VNODE*, SIMULATOR const&) (node.cpp:73)
+          n1: 1048576 0x12D834: MCTS::~MCTS() (mcts.cpp:127)
+           n1: 1048576 0x116EDC: EXPERIMENT::Run(int) (experiment.cpp:80)
+            n1: 1048576 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+             n1: 1048576 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+              n0: 1048576 0x11C4B9: main (main.cpp:150)
+          n0: 0 in 1 place, below massif's threshold (1.00%)
+    n0: 2048 in 1 place, below massif's threshold (1.00%)
+ n1: 901256 0x115932: __gnu_cxx::new_allocator<STATE*>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n1: 901256 0x11580E: std::allocator_traits<std::allocator<STATE*> >::allocate(std::allocator<STATE*>&, unsigned long) (alloc_traits.h:436)
+   n2: 901256 0x1156BE: std::_Vector_base<STATE*, std::allocator<STATE*> >::_M_allocate(unsigned long) (stl_vector.h:172)
+    n1: 770048 0x115258: void std::vector<STATE*, std::allocator<STATE*> >::_M_realloc_insert<STATE* const&>(__gnu_cxx::__normal_iterator<STATE**, std::vector<STATE*, std::allocator<STATE*> > >, STATE* const&) (vector.tcc:406)
+     n1: 770048 0x114F4E: std::vector<STATE*, std::allocator<STATE*> >::push_back(STATE* const&) (stl_vector.h:948)
+      n3: 770048 0x114B49: BELIEF_STATE::AddSample(STATE*) (beliefstate.cpp:30)
+       n1: 507904 0x12EF74: MCTS::AddSample(VNODE*, STATE const&) (mcts.cpp:417)
+        n1: 507904 0x12E9D9: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:338)
+         n1: 507904 0x12ECD9: MCTS::SimulateQ(STATE&, QNODE&, int) (mcts.cpp:376)
+          n1: 507904 0x12EA05: MCTS::SimulateV(STATE&, VNODE*) (mcts.cpp:341)
+           n1: 507904 0x12E846: MCTS::UCTSearch() (mcts.cpp:314)
+            n1: 507904 0x12DF2C: MCTS::SelectAction() (mcts.cpp:227)
+             n1: 507904 0x11640F: EXPERIMENT::Run(int) (experiment.cpp:109)
+              n1: 507904 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+               n1: 507904 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+                n0: 507904 0x11C4B9: main (main.cpp:150)
+       n1: 262144 0x12CC2E: MCTS::MCTS(SIMULATOR const&, MCTS::PARAMS const&) (mcts.cpp:43)
+        n1: 262144 0x116126: EXPERIMENT::Run(int) (experiment.cpp:80)
+         n1: 262144 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+          n1: 262144 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+           n0: 262144 0x11C4B9: main (main.cpp:150)
+       n0: 0 in 1 place, below massif's threshold (1.00%)
+    n1: 131208 0x1325A4: STATE** std::vector<STATE*, std::allocator<STATE*> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<STATE* const*, std::vector<STATE*, std::allocator<STATE*> > > >(unsigned long, __gnu_cxx::__normal_iterator<STATE* const*, std::vector<STATE*, std::allocator<STATE*> > >, __gnu_cxx::__normal_iterator<STATE* const*, std::vector<STATE*, std::allocator<STATE*> > >) (stl_vector.h:1260)
+     n1: 131208 0x131815: std::vector<STATE*, std::allocator<STATE*> >::operator=(std::vector<STATE*, std::allocator<STATE*> > const&) (vector.tcc:206)
+      n1: 131208 0x131173: BELIEF_STATE::operator=(BELIEF_STATE const&) (beliefstate.h:9)
+       n1: 131208 0x12DB5D: MCTS::Update(int, int, double) (mcts.cpp:173)
+        n1: 131208 0x1168AA: EXPERIMENT::Run(int) (experiment.cpp:156)
+         n1: 131208 0x117170: EXPERIMENT::MultiRun() (experiment.cpp:236)
+          n1: 131208 0x1178CF: EXPERIMENT::DiscountedReturn() (experiment.cpp:299)
+           n0: 131208 0x11C4B9: main (main.cpp:150)
+ n0: 142293 in 53 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=54
+#-----------
+time=59335846584
+mem_heap_B=5815029
+mem_heap_extra_B=1406779
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=59952327944
+mem_heap_B=6390325
+mem_heap_extra_B=1407763
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=60557019745
+mem_heap_B=5617877
+mem_heap_extra_B=1406587
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=61256921037
+mem_heap_B=5812645
+mem_heap_extra_B=1406339
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=61851646225
+mem_heap_B=6192353
+mem_heap_extra_B=1407023
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=62584932691
+mem_heap_B=6862437
+mem_heap_extra_B=1406915
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=63193458707
+mem_heap_B=5811913
+mem_heap_extra_B=1406183
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=63795907025
+mem_heap_B=6077081
+mem_heap_extra_B=1406607
+mem_stacks_B=0
+heap_tree=empty

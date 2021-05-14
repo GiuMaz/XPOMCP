@@ -1,0 +1,82 @@
+[
+{
+  "directory": "/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/build",
+  "command": "/usr/bin/c++   -I/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/./src    -std=gnu++1z -o CMakeFiles/pomcp.dir/src/battleship.cpp.o -c /home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/src/battleship.cpp",
+  "file": "/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/src/battleship.cpp"
+},
+{
+  "directory": "/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/build",
+  "command": "/usr/bin/c++   -I/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/./src    -std=gnu++1z -o CMakeFiles/pomcp.dir/src/beliefstate.cpp.o -c /home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/src/beliefstate.cpp",
+  "file": "/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/src/beliefstate.cpp"
+},
+{
+  "directory": "/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/build",
+  "command": "/usr/bin/c++   -I/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/./src    -std=gnu++1z -o CMakeFiles/pomcp.dir/src/coord.cpp.o -c /home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/src/coord.cpp",
+  "file": "/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/src/coord.cpp"
+},
+{
+  "directory": "/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/build",
+  "command": "/usr/bin/c++   -I/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/./src    -std=gnu++1z -o CMakeFiles/pomcp.dir/src/experiment.cpp.o -c /home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/src/experiment.cpp",
+  "file": "/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/src/experiment.cpp"
+},
+{
+  "directory": "/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/build",
+  "command": "/usr/bin/c++   -I/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/./src    -std=gnu++1z -o CMakeFiles/pomcp.dir/src/main.cpp.o -c /home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/src/main.cpp",
+  "file": "/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/src/main.cpp"
+},
+{
+  "directory": "/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/build",
+  "command": "/usr/bin/c++   -I/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/./src    -std=gnu++1z -o CMakeFiles/pomcp.dir/src/mcts.cpp.o -c /home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/src/mcts.cpp",
+  "file": "/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/src/mcts.cpp"
+},
+{
+  "directory": "/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/build",
+  "command": "/usr/bin/c++   -I/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/./src    -std=gnu++1z -o CMakeFiles/pomcp.dir/src/network.cpp.o -c /home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/src/network.cpp",
+  "file": "/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/src/network.cpp"
+},
+{
+  "directory": "/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/build",
+  "command": "/usr/bin/c++   -I/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/./src    -std=gnu++1z -o CMakeFiles/pomcp.dir/src/node.cpp.o -c /home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/src/node.cpp",
+  "file": "/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/src/node.cpp"
+},
+{
+  "directory": "/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/build",
+  "command": "/usr/bin/c++   -I/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/./src    -std=gnu++1z -o CMakeFiles/pomcp.dir/src/pocman.cpp.o -c /home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/src/pocman.cpp",
+  "file": "/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/src/pocman.cpp"
+},
+{
+  "directory": "/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/build",
+  "command": "/usr/bin/c++   -I/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/./src    -std=gnu++1z -o CMakeFiles/pomcp.dir/src/rocksample.cpp.o -c /home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/src/rocksample.cpp",
+  "file": "/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/src/rocksample.cpp"
+},
+{
+  "directory": "/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/build",
+  "command": "/usr/bin/c++   -I/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/./src    -std=gnu++1z -o CMakeFiles/pomcp.dir/src/simulator.cpp.o -c /home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/src/simulator.cpp",
+  "file": "/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/src/simulator.cpp"
+},
+{
+  "directory": "/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/build",
+  "command": "/usr/bin/c++   -I/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/./src    -std=gnu++1z -o CMakeFiles/pomcp.dir/src/tag.cpp.o -c /home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/src/tag.cpp",
+  "file": "/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/src/tag.cpp"
+},
+{
+  "directory": "/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/build",
+  "command": "/usr/bin/c++   -I/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/./src    -std=gnu++1z -o CMakeFiles/pomcp.dir/src/testsimulator.cpp.o -c /home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/src/testsimulator.cpp",
+  "file": "/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/src/testsimulator.cpp"
+},
+{
+  "directory": "/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/build",
+  "command": "/usr/bin/c++   -I/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/./src    -std=gnu++1z -o CMakeFiles/pomcp.dir/src/utils.cpp.o -c /home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/src/utils.cpp",
+  "file": "/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/src/utils.cpp"
+},
+{
+  "directory": "/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/build",
+  "command": "/usr/bin/c++   -I/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/./src    -std=gnu++1z -o CMakeFiles/pomcp.dir/src/tiger.cpp.o -c /home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/src/tiger.cpp",
+  "file": "/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/src/tiger.cpp"
+},
+{
+  "directory": "/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/build",
+  "command": "/usr/bin/c++   -I/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/./src    -std=gnu++1z -o CMakeFiles/pomcp.dir/src/obstacleavoidance.cpp.o -c /home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/src/obstacleavoidance.cpp",
+  "file": "/home/giulio/Progetti/rule_synthesis/icaps/supmat/pomcp-1.0/src/obstacleavoidance.cpp"
+}
+]
