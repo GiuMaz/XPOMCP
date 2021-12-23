@@ -1,0 +1,13 @@
+.  /pomcp --problem tag --number 1 --mindoubles 15 --maxdoubles 15 --runs 100 --treeknowledge 0 --rolloutknowledge 0 --smarttreecount 10 --smarttreevalue 10 --timeout 10000000 --xes 1
+Undiscounted return = -53.78 +- 3.55028
+Discounted return = -15.2501 +- 0.729425
+
+
+./pomcp --problem tag --number 1 --mindoubles 15 --maxdoubles 15 --runs 100 --treeknowledge 2 --rolloutknowledge 2 --smarttreecount 10 --smarttreevalue 10 --timeout 10000000 --xes 1
+Undiscounted return = -9.61 +- 1.06704
+Discounted return = -7.50459 +- 0.593069
+
+./pomcp --problem tag --number 1 --mindoubles 15 --maxdoubles 15 --runs 100 --treeknowledge 2 --rolloutknowledge 2 --smarttreecount 10 --smarttreevalue 30 --timeout 10000000 --xes 1
+
+Undiscounted return = -10.13 +- 1.12691
+Discounted return = -7.81561 +- 0.544514

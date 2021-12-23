@@ -1,0 +1,36 @@
+note 14/12/21
+- documento definizione esperimento e messaggio da aggiungere:
+    - velocity + battery
+    - metti giù bene il problema che si vuole verificare
+    - implementare smc ecc e confrontarsi (Kavraki)
+
+    - va bene mettere vel e bat completamente separati???
+    - implementa kavraki che deve avere senso
+
+note pietro
+attachi black-box. Si basa su attacchi a classificatori di immagini.
+somiglianza con pomco, lo si pensi come input-output.
+Concetto: modelli trainati su dataset incompleti 
+
+
+--------------------------------------------------------------
+note 20/12/21
+per possibile IJCAI:
+- prendere review e vedere se si può far di meglio...
+- togliamo 4 exp in più 
+
+per AIJ:
+- lavorare sulla baseline (con POMCP classico): batteria, velocity, ...
+- letteratura risk-aware...
+- manca ancora un vero punto di confronto! (ma metitamo da parte kavraki per adesso...)
+
+
+-----------------------------------------------------------------
+Nereo 22/12/21
+- lavorare su rocksample -> farlo andare dignitosamente
+- implementare tracce
+- creare regole
+- implementare velocity regulation
+
+
+
